@@ -21,6 +21,19 @@ var orm = {
         }
         cb(result);
       });
-  },
-}  
+  }, 
+
+insertOne: function(table, burger_name, cb) {
+    var queryString = "INSERT INTO" + table + " (burger_name) VALUE ('" + burger_name + "')";
+    console.log(queryString);
+    connection.query(queryString, vals, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+},
+
+}
+
 
