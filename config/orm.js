@@ -50,8 +50,10 @@ updateOne: function(table, objColVals, condition, cb) {
       cb(result);
     });
   }
-  
+
 }
+
+module.exports = orm;
 
 
 
