@@ -1,0 +1,107 @@
+<!--main container start-->
+    <div class="container">
+      <br><br>
+      <!--page main header-->
+      <h1 class="header center brown-text text-lighten-2">WELCOME TO THE BURGER JOINT </h1>
+      <br><br>
+  
+  
+    </div>
+  <!--burger image container-->
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+      </div>
+      <div class="parallax"><img src="https://prod-wolt-venue-images-cdn.wolt.com/5bfbf1d9310229000c3d7f63/dd7822b4b7802ced3651044d13b51a36" alt="Burger image"></div>
+    </div>
+    <!--Builld burger header-->
+    <div class="container">
+      <br><br>
+      <h2 class="header center brown-text text-lighten-2">BUILD YOUR BURGER </h2>
+      <br><br>
+  
+    </div>
+     
+    <!--Animated burger gif-->
+    <div class ="container center " id="animated-burger">
+      <div class="row">
+        <div class="col s12 m12">
+      <img src="https://cdn.dribbble.com/users/2100764/screenshots/5560096/hamburger.gif" alt="Animated Burger image">
+        </div>
+      </div>
+    </div> 
+  
+  
+    <div class="container">
+      <div class="section">
+  
+        <!--   Icon Section   -->
+        <div class="row burgers">
+          <div class="col s12 m6">
+            <div class="icon-block">
+              <h2 class="center brown-text"><i class="material-icons">local_dining</i></h2>
+              <h5 class="center">Eat Me</h5>
+            </div>
+          </div>
+          <!--start here-->
+          <div class="row">
+             <form class="col s12 m6 create-form">
+                 <div class="row">
+                  <div class="text-center input-field col s12 s6">
+                  <input placeholder="Placeholder" id="cheesy burger" type="text" class="validate">
+                    <label for="burgeradd">Add A Burger Name</label>
+                  </div>
+                        <input type="text" id="new" name="name">
+                    </div>
+                    <button class="btn waves-effect waves-light" type="click" name="action">Submit
+                     <i class="material-icons right">send</i>
+                   </button>    
+                </form>
+            </div>
+        </div>
+    </div>
+
+        <div class="col-md-5 to-eat-container">
+                <h2>Burgers to Eat:</h2>
+            <hr>
+            <ul>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <span><strong>{{this.id}} - {{this.burger_name}} </strong></span>
+                <button type="click" class="sub btn btn-warning" data-id="{{this.id}}"
+                    data-newDevState="{{devour}}"><span>Devour</span></button>
+                <hr>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+         <div class="col-md-2">
+        </div>
+
+        <div class="col-md-5 devoured-container">
+                <h2>Burgers Devoured:</h2>
+            <hr>
+            <ul>
+                {{#each burgers}}
+                {{#if devoured}}
+                <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                <button type="button" class="delete btn btn-danger" data-id="{{this.id}}"
+                    data-newDev="{{devour}}"><span>delete</span></button>
+                <hr>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+
+</div>
+
+          <!--end here-->
+  
+    
+    
+    <!--Footer-->
+      <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Linda Hlubi 2021</a>
+        </div>
+      </div>
+    </footer>
